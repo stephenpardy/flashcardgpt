@@ -1,0 +1,54 @@
+[project]
+name = "flashcardgpt"
+version = "0.1.0"
+description = "AI powered flashcard app"
+authors = ["Stephen Pardy"]
+license = "MIT"
+readme = "README.md"
+packages = [{include = "flashcardgpt"}]
+requires-python = ">= 3.12"
+repository = "https://github.com/stephenpardy/flashcardgpt"
+dependencies=[]
+
+[tool.black]
+line-length = 88
+include = '\.pyi?$'
+exclude = '''
+/(
+    \.eggs
+  | \.git
+  | \.hg
+  | \.mypy_cache
+  | \.tox
+  | \.venv
+  | _build
+  | buck-out
+  | build
+  | dist
+)/
+'''
+
+[tool.mypy]
+python_version = 3.8
+warn_return_any = true
+warn_unused_configs = true
+ignore_missing_imports = true
+
+[tool.pytest.ini_options]
+minversion = "6.0"
+addopts = "-ra -q"
+testpaths = [
+    "tests",
+]
+
+[tool.isort]
+profile = "black"
+line_length = 88
+known_third_party = ["pytest","numpy","pandas"]
+
+[tool.flake8]
+max-line-length = 88
+
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Quiz</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <form id="hiddenForm" method="post" action="/" style="display: none;">
+        <input type="hidden" name="action" id="hiddenInput" value="initialValue">
+    </form>
+
+    <div class="container">
+
+        <div>Studying from {{ study.url }}</div>
+        
+        {% for question in question_bank %}
+            {% if 'incorrect' not in question.flags %}
+
+            <div class="question">{{ question.question }}</div>
+            <div class="answerRoundup">The answer is {{ question.correct_answers[0] }}</div>
+            <div>You got this answer {% if question.evaluations[-1] %}correct!{% else %}incorrect!{% endif %}</div>
+
+                {% if not question.evaluations[-1] %}
+                    <div class="answerRoundup">You answered {{ question.guesses[-1] }}</div>
+                {% endif %}
+
+            {% endif %}
+
+        {% endfor %}
+
+        <div class="button-container">
+            <button class="button" id="more">Study more of this topic</button>
+            <button class="button" id="again">Study these questions again</button>
+            <button class="button" id="new">Study a new topic</button>
+        </div>
+
+    </div>  
+</body>
+<script src="{{ url_for('static', filename='roundup_script.js') }}"></script>
+</html>
