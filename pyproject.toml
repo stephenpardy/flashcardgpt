@@ -2,13 +2,24 @@
 name = "flashcardgpt"
 version = "0.1.0"
 description = "AI powered flashcard app"
-authors = ["Stephen Pardy"]
-license = "MIT"
+authors = [{name = "Stephen Pardy", email = "stephen.pardy@gmail.com"}]
 readme = "README.md"
-packages = [{include = "flashcardgpt"}]
 requires-python = ">= 3.12"
-repository = "https://github.com/stephenpardy/flashcardgpt"
-dependencies=[]
+dependencies=[
+  "Flask",
+  "instructor",
+  "openai",
+  "mypy-extensions",
+]
+
+[project.optional-dependencies]
+qa = [
+  "black",
+  "flake8",
+  "isort",
+  "mypy",
+]
+
 
 [tool.black]
 line-length = 88

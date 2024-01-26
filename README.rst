@@ -15,18 +15,15 @@ FlashcardGPT
 
 
 
+A simple project to learn more about using LLMs in an app.
+An AI-powered multiple choice question app.
 
-An AI-powered flashcard app
-
+Uses OpenAI's API to create multiple choice questions based on the web url given
+Randomizes the order of the answers to help avoid memorizing the questions.
 
 * Free software: MIT license
 * Documentation: https://flashcardgpt.readthedocs.io.
 
-
-Features
---------
-
-* TODO
 
 Credits
 -------
