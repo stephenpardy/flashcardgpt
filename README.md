@@ -8,6 +8,8 @@ Randomizes the order of the answers to help avoid memorizing the questions.
 
 Running:
 
-1. Install the package locally `pip install -e .`
-2. cd into the `flashcardgpt` subfolder
-3. Run with flask: `python app.py`
+1. Clone the repo locally
+2. Install the package locally `pip install -e .`
+3. Make sure you have an OpenAI api key added to your local environment variable `OPENAI_API_KEY`
+4. cd into the `flashcardgpt` subfolder
+5. Run with flask: `python app.py`
